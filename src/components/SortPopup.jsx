@@ -15,10 +15,9 @@ const SortPopup = ({items}) => {
 	}
 
 	const handleOutsideClick = (e) => {
-		if (sortRef.current.contains(e.target)) {
-			return;
+		if (sortRef.current && !sortRef.current.contains(e.target)) {
+			setVisiblePopup(false);
 		}
-		setVisiblePopup(false)
 	}
 
 	React.useEffect(() => {
